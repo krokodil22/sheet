@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Обновление траектории групп</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Объединение недельных таблиц</h1>
+      <p class="lead">
+        Веб‑сервис работает полностью в браузере и подходит для GitHub Pages: загрузите
+        общую таблицу (необязательно), добавьте новые недельные выгрузки и скачайте
+        обновлённый файл.
+      </p>
+
+      <section class="card">
+        <h2>1) Текущая общая таблица (необязательно)</h2>
+        <input id="baseFile" type="file" accept=".xlsx" />
+        <small>Если файла нет — сервис соберёт общую таблицу с нуля.</small>
+      </section>
+
+      <section class="card">
+        <h2>2) Новые недельные выгрузки</h2>
+        <input id="weeklyFiles" type="file" accept=".xlsx" multiple required />
+        <small>Можно выбрать сразу несколько недель за один раз.</small>
+      </section>
+
+      <section class="card actions">
+        <button id="mergeBtn" type="button">Собрать обновлённую таблицу</button>
+        <button id="downloadBtn" type="button" disabled>Скачать результат</button>
+      </section>
+
+      <section class="card">
+        <h2>Лог обработки</h2>
+        <pre id="log"></pre>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
